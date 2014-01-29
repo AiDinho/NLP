@@ -51,10 +51,7 @@ def segment(sentence):
 
 probGen()
 text = codecs.open("../zhwseg.in","r",encoding="utf-8").readlines()
-i = 0
 for line in text:
-    i = i + 1
-    s = ""
-    for w in segment(line.rstrip()):
-        s = s + "||" + w
-    print s
+    line = line[:-1]
+    output = segment(line)
+    print " ".join(output)
