@@ -1,12 +1,50 @@
 #since we have up to 4-grams in the training data, we may use 4-grams model
 import sys, codecs
 
+    
+lines = open("../zh-wseg.train.utf8","r").readlines()
+freq = {}
+for line in lines:
+    w = line.split()
+    char = w[1]
+    frequency = w[0]
+    t={}
+    t[char] = frequency 
+    freq.update(t)
+    
+def Pw(word):
+    return freq[word]
 
+def segment(text):
+    table = [[""]]
+    text = unisplit(text, 3)
+    print text
+    
+    for i in range(500):
+        print text[i]
+    i = 0
+    '''while (i <= len(text)):
+        seg = splits([text[i],text[i+1],text[i+2],text[i+3]])
+        i = i+1
+'''
+    
+    
 
+    
+def splits(chunk):
+    return
+    
+def unisplit(str, num):
+    return [str[start:start+num] for start in range(0, len(str), num)]
+    
+def Pwords(words):
+    product = 1    
+    for w in words:
+        product = product * Pw(w)
+    return product
 
-
-
-
+text = open("../zhwseg.in","r").read()
+segment(text)
 
 
 if __name__ == '__main__':
