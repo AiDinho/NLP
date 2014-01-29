@@ -2,16 +2,9 @@
 import sys, codecs
 
     
-lines = open("../zh-wseg.train.utf8","r").readlines()
-freq = {}
-for line in lines:
-    w = line.split()
-    char = w[1]
-    frequency = w[0]
-    t={}
-    t[char] = frequency 
-    freq.update(t)
-    
+
+
+
 def Pw(word):
     return freq[word]
 
@@ -27,9 +20,6 @@ def segment(text):
         seg = splits([text[i],text[i+1],text[i+2],text[i+3]])
         i = i+1
 '''
-    
-    
-
     
 def splits(chunk):
     return
