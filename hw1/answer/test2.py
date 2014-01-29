@@ -20,7 +20,10 @@ def Pw(word):
     try:
         return prob[word]
     except:
-        return 10./(N*10**len(word))
+        p = 100
+        if len(word) < 3:
+            p = 100000
+        return 10./(N*p**len(word)) #the penalty is really really important
         
 def splits(charlist):
     return [("".join(charlist[:i+1]), "".join(charlist[i+1:]))
@@ -45,12 +48,14 @@ def memo(f):
 @memo
 def segment(sentence):
     if not sentence: return []
-    charlist = list(sentence)   
+    charlist = list(sentence)
     candidates = [[first]+segment(rem) for first,rem in splits(charlist)]
     return max(candidates, key=Pwords)
 
 probGen()
 text = codecs.open("../zhwseg.in","r",encoding="utf-8").readlines()
 for line in text:
-    print segment(line.rstrip())
-    
+    s = ""
+    for w in segment(line.rstrip()):
+        s = s+"||"+w
+    print s
