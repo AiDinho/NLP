@@ -1,9 +1,12 @@
 #since we have up to 4-grams in the training data, we may use 4-grams model
-import sys, codecs
+import sys, codecs, re
 
 
 prob = {}
-N = float(0.0) 
+N = float(0.0)
+rex1 = re.compile(ur'^\d+[\u6708\u4E2A\u53F7\u5E74\u4E07%]{1}\Z',re.UNICODE)
+rex2 = re.compile(ur"^\d+\Z",re.UNICODE)
+rex3 = re.compile(ur"")
 
 def probGen(path):
     global prob, N    
@@ -20,12 +23,15 @@ def probGen(path):
     
 def Pw(word):
     try:
+        if rex1.match(word):
+            return 0.2
+        if rex2.match(word):
+            return 0.2
         return prob[word]
     except:
+        return 1000./(N*10000**len(word))
         
-        return 10./(N*10000**len(word))
-        
-def splits(charlist, L=20):
+def splits(charlist, L=5):
     return [("".join(charlist[:s+1]), "".join(charlist[s+1:]))
             for s in range(min(len(charlist),L))]
 
@@ -60,8 +66,11 @@ if __name__ == '__main__':
         probGen(sys.argv[1])
         for line in sys.stdin:
             line = line[:-1]
-            utf8line = unicode(line, 'utf-8')
-            output = segment(utf8line)
+            lines = line.split(" ") #tackle some unexpected spaces
+            output = []
+            for line in lines:
+                utf8line = unicode(line, 'utf-8')
+                output = output + segment(utf8line)
             print " ".join(output)
         sys.stdout = old
     else:
