@@ -1,7 +1,8 @@
-import codecs
+import codecs, re
 
 prob = {}
 N = float(0.0) 
+rex1 = re.compile(ur'^\d+[\u6708\u4E2A%]\Z',re.UNICODE)
 
 def probGen():
     global prob, N    
@@ -18,11 +19,14 @@ def probGen():
     
 def Pw(word):
     try:
+        if rex1.match(word):
+            print word
+            return 0.01
         return prob[word]
     except:
-        return 10./(N*1000000**len(word))
+        return 1000./(N*10000**len(word))
         
-def splits(charlist, L=20):
+def splits(charlist, L=5):
     return [("".join(charlist[:s+1]), "".join(charlist[s+1:]))
             for s in range(min(len(charlist),L))]
 
@@ -49,10 +53,11 @@ def segment(sentence):
     return max(candidates, key=Pwords)
 
 probGen()
-text = codecs.open("../zhwseg.in","r",encoding="utf-8").readlines()
-i = 0
+text = codecs.open("../zhwtest.in","r",encoding="utf-8").readlines()
 for line in text:
-    s = ""
-    for w in segment(line.rstrip()):
-        s = s+w+" "
-    print s
+    line = line[:-1]
+    lines = line.split(" ")
+    output = []
+    for line in lines:
+        output = output + segment(line)
+    print " ".join(output)
