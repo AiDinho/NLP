@@ -20,14 +20,11 @@ def Pw(word):
     try:
         return prob[word]
     except:
-        p = 100
-        if len(word) < 3:
-            p = 100000
-        return 10./(N*p**len(word)) #the penalty is really really important
+        return 10./(N*1000000**len(word))
         
-def splits(charlist):
-    return [("".join(charlist[:i+1]), "".join(charlist[i+1:]))
-            for i in range(len(charlist))]
+def splits(charlist, L=20):
+    return [("".join(charlist[:s+1]), "".join(charlist[s+1:]))
+            for s in range(min(len(charlist),L))]
 
 def Pwords(words):
     product = 1
@@ -36,7 +33,6 @@ def Pwords(words):
     return product
     
 def memo(f):
-    "Memoize function f."
     table = {}
     def fmemo(*args):
         if args not in table:
@@ -54,8 +50,9 @@ def segment(sentence):
 
 probGen()
 text = codecs.open("../zhwseg.in","r",encoding="utf-8").readlines()
+i = 0
 for line in text:
     s = ""
     for w in segment(line.rstrip()):
-        s = s+"||"+w
+        s = s+w+" "
     print s
