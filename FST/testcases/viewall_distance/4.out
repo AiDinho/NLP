@@ -1,0 +1,402 @@
+levenshtein distance = 13
+# printing out max 100 alignments
+# alignment number 1
+t h e r e ' s   a   b a t h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |       | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   m o o n   o n   t h e   r i _ s e 
+# alignment number 2
+t h e r e ' s   a   b a t _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   m o o n   o n   t h e   r i _ s e 
+# alignment number 3
+t h e r e ' s   a   b a _ t h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   m o o n   o n   t h e   r i _ s e 
+# alignment number 4
+t h e r e ' s   a   b a t h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   m o o n   o n   t h e   r i _ s e 
+# alignment number 5
+t h e r e ' s   a   b a t h _ _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ d   m o o n   o n   t h e   r i _ s e 
+# alignment number 6
+t h e r e ' s   a   b a t h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   m o o n   o n   t h e   r i _ s e 
+# alignment number 7
+t h e r e ' s   a   b a t _ h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d _   m o o n   o n   t h e   r i _ s e 
+# alignment number 8
+t h e r e ' s   a   b a _ t h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _ _   m o o n   o n   t h e   r i _ s e 
+# alignment number 9
+t h e r e ' s   a   b a _ t h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 10
+t h e r e ' s   a   b a t _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 11
+t h e r e ' s   a   b a t _ _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 12
+t h e r e ' s   a   b a _ t _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 13
+t h e r e ' s   a   b a _ _ t h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ _ m o o n   o n   t h e   r i _ s e 
+# alignment number 14
+t h e r e ' s   a   b a t h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   m o o n   o n   t h e   r i _ s e 
+# alignment number 15
+t h e r e ' s   a   b a t h _ r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ d   m o o n   o n   t h e   r i _ s e 
+# alignment number 16
+t h e r e ' s   a   b a t h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   m o o n   o n   t h e   r i _ s e 
+# alignment number 17
+t h e r e ' s   a   b a t _ h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d _   m o o n   o n   t h e   r i _ s e 
+# alignment number 18
+t h e r e ' s   a   b a _ t h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _ _   m o o n   o n   t h e   r i _ s e 
+# alignment number 19
+t h e r e ' s   a   b a t h r _ _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ d   m o o n   o n   t h e   r i _ s e 
+# alignment number 20
+t h e r e ' s   a   b a t h r _ _ _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ _ d   m o o n   o n   t h e   r i _ s e 
+# alignment number 21
+t h e r e ' s   a   b a t h r _ _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d _   m o o n   o n   t h e   r i _ s e 
+# alignment number 22
+t h e r e ' s   a   b a t h _ r _ _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ d _   m o o n   o n   t h e   r i _ s e 
+# alignment number 23
+t h e r e ' s   a   b a t h r _ _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _ _   m o o n   o n   t h e   r i _ s e 
+# alignment number 24
+t h e r e ' s   a   b a t _ h r _ _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d _ _   m o o n   o n   t h e   r i _ s e 
+# alignment number 25
+t h e r e ' s   a   b a _ t h r _ _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _ _ _   m o o n   o n   t h e   r i _ s e 
+# alignment number 26
+t h e r e ' s   a   b a t h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 27
+t h e r e ' s   a   b a t _ h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 28
+t h e r e ' s   a   b a _ t h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 29
+t h e r e ' s   a   b a t h _ r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 30
+t h e r e ' s   a   b a t h _ _ r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ d   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 31
+t h e r e ' s   a   b a t h _ r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 32
+t h e r e ' s   a   b a t _ h _ r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d _   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 33
+t h e r e ' s   a   b a _ t h _ r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _ _   _ m o o n   o n   t h e   r i _ s e 
+# alignment number 34
+t h e r e ' s   a   b a _ t h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ _ m o o n   o n   t h e   r i _ s e 
+# alignment number 35
+t h e r e ' s   a   b a t _ h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ _ m o o n   o n   t h e   r i _ s e 
+# alignment number 36
+t h e r e ' s   a   b a t _ _ h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   _ _ m o o n   o n   t h e   r i _ s e 
+# alignment number 37
+t h e r e ' s   a   b a _ t _ h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   _ _ m o o n   o n   t h e   r i _ s e 
+# alignment number 38
+t h e r e ' s   a   b a _ _ t h r _ o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ _ _ m o o n   o n   t h e   r i _ s e 
+# alignment number 39
+t h e r e ' s   a   b a _ t h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 40
+t h e r e ' s   a   b a t _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 41
+t h e r e ' s   a   b a t _ _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 42
+t h e r e ' s   a   b a _ t _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 43
+t h e r e ' s   a   b a _ _ t h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ m _ o o n   o n   t h e   r i _ s e 
+# alignment number 44
+t h e r e ' s   a   b a t h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 45
+t h e r e ' s   a   b a t _ h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 46
+t h e r e ' s   a   b a _ t h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 47
+t h e r e ' s   a   b a t h _ _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 48
+t h e r e ' s   a   b a t h _ _ _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ d   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 49
+t h e r e ' s   a   b a t h _ _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 50
+t h e r e ' s   a   b a t _ h _ _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d _   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 51
+t h e r e ' s   a   b a _ t h _ _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _ _   m _ o o n   o n   t h e   r i _ s e 
+# alignment number 52
+t h e r e ' s   a   b a _ t h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ m _ o o n   o n   t h e   r i _ s e 
+# alignment number 53
+t h e r e ' s   a   b a t _ h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ m _ o o n   o n   t h e   r i _ s e 
+# alignment number 54
+t h e r e ' s   a   b a t _ _ h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   _ m _ o o n   o n   t h e   r i _ s e 
+# alignment number 55
+t h e r e ' s   a   b a _ t _ h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   _ m _ o o n   o n   t h e   r i _ s e 
+# alignment number 56
+t h e r e ' s   a   b a _ _ t h _ r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ _ m _ o o n   o n   t h e   r i _ s e 
+# alignment number 57
+t h e r e ' s   a   b a _ _ t h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   m _ _ o o n   o n   t h e   r i _ s e 
+# alignment number 58
+t h e r e ' s   a   b a _ t _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   m _ _ o o n   o n   t h e   r i _ s e 
+# alignment number 59
+t h e r e ' s   a   b a t _ _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   m _ _ o o n   o n   t h e   r i _ s e 
+# alignment number 60
+t h e r e ' s   a   b a t _ _ _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   m _ _ o o n   o n   t h e   r i _ s e 
+# alignment number 61
+t h e r e ' s   a   b a _ t _ _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d _   m _ _ o o n   o n   t h e   r i _ s e 
+# alignment number 62
+t h e r e ' s   a   b a _ _ t _ h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ m _ _ o o n   o n   t h e   r i _ s e 
+# alignment number 63
+t h e r e ' s   a   b a _ _ _ t h r o o m   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |   | | | | | | | | | |       
+t h e r e ' s   a   b a d   m _ _ _ o o n   o n   t h e   r i _ s e 
+# alignment number 64
+t h e r e ' s   a   b a t h r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |       | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 65
+t h e r e ' s   a   b a t _ h r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 66
+t h e r e ' s   a   b a _ t h r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 67
+t h e r e ' s   a   b a t h _ r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 68
+t h e r e ' s   a   b a t h _ _ r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ d   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 69
+t h e r e ' s   a   b a t h _ r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 70
+t h e r e ' s   a   b a t _ h _ r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 71
+t h e r e ' s   a   b a _ t h _ r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _ _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 72
+t h e r e ' s   a   b a _ t h r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 73
+t h e r e ' s   a   b a t _ h r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 74
+t h e r e ' s   a   b a t _ _ h r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 75
+t h e r e ' s   a   b a _ t _ h r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 76
+t h e r e ' s   a   b a _ _ t h r o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 77
+t h e r e ' s   a   b a t h r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 78
+t h e r e ' s   a   b a t h _ r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ d   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 79
+t h e r e ' s   a   b a t h r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 80
+t h e r e ' s   a   b a t _ h r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 81
+t h e r e ' s   a   b a _ t h r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _ _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 82
+t h e r e ' s   a   b a t h r _ _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ d   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 83
+t h e r e ' s   a   b a t h r _ _ _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ _ d   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 84
+t h e r e ' s   a   b a t h r _ _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 85
+t h e r e ' s   a   b a t h _ r _ _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ d _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 86
+t h e r e ' s   a   b a t h r _ _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _ _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 87
+t h e r e ' s   a   b a t _ h r _ _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d _ _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 88
+t h e r e ' s   a   b a _ t h r _ _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _ _ _   m o o _ n   o n   t h e   r i _ s e 
+# alignment number 89
+t h e r e ' s   a   b a t h r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |         | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 90
+t h e r e ' s   a   b a t _ h r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 91
+t h e r e ' s   a   b a _ t h r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 92
+t h e r e ' s   a   b a t h _ r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 93
+t h e r e ' s   a   b a t h _ _ r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ _ d   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 94
+t h e r e ' s   a   b a t h _ r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 95
+t h e r e ' s   a   b a t _ h _ r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d _   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 96
+t h e r e ' s   a   b a _ t h _ r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _ _   _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 97
+t h e r e ' s   a   b a _ t h r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 98
+t h e r e ' s   a   b a t _ h r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |           | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d   _ _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 99
+t h e r e ' s   a   b a t _ _ h r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |     | | | | | | | | | |       
+t h e r e ' s   a   b a _ d   _ _ m o o _ n   o n   t h e   r i _ s e 
+# alignment number 100
+t h e r e ' s   a   b a _ t _ h r _ o o m _   o n   t h e   r i g h t 
+| | | | | | | | | | | |             | |     | | | | | | | | | |       
+t h e r e ' s   a   b a d _   _ _ m o o _ n   o n   t h e   r i _ s e 

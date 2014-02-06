@@ -1,0 +1,4 @@
+levenshtein distance = 13
+t h e r e ' s   a   b a t h r o o m   o n   t h e   r i g h t  
+| | | | | | | | | | | |       | |   | | | | | | | | | |        
+t h e r e ' s   a   b a d   m o o n   o n   t h e   r i _ s e 

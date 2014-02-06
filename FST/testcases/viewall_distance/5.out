@@ -1,0 +1,402 @@
+levenshtein distance = 8
+# printing out max 100 alignments
+# alignment number 1
+a b c d 
+        
+e f g h 
+# alignment number 2
+a _ b c d 
+          
+_ e f g h 
+# alignment number 3
+_ a b c d 
+          
+e _ f g h 
+# alignment number 4
+a b _ c d 
+          
+_ e f g h 
+# alignment number 5
+a b _ _ c d 
+            
+_ _ e f g h 
+# alignment number 6
+a b _ c d 
+          
+e _ f g h 
+# alignment number 7
+a _ b _ c d 
+            
+_ e _ f g h 
+# alignment number 8
+_ a b _ c d 
+            
+e _ _ f g h 
+# alignment number 9
+_ a b c d 
+          
+e f _ g h 
+# alignment number 10
+a _ b c d 
+          
+e f _ g h 
+# alignment number 11
+a _ _ b c d 
+            
+_ e f _ g h 
+# alignment number 12
+_ a _ b c d 
+            
+e _ f _ g h 
+# alignment number 13
+_ _ a b c d 
+            
+e f _ _ g h 
+# alignment number 14
+a b c _ d 
+          
+_ e f g h 
+# alignment number 15
+a b _ c _ d 
+            
+_ _ e f g h 
+# alignment number 16
+a b c _ d 
+          
+e _ f g h 
+# alignment number 17
+a _ b c _ d 
+            
+_ e _ f g h 
+# alignment number 18
+_ a b c _ d 
+            
+e _ _ f g h 
+# alignment number 19
+a b c _ _ d 
+            
+_ _ e f g h 
+# alignment number 20
+a b c _ _ _ d 
+              
+_ _ _ e f g h 
+# alignment number 21
+a b c _ _ d 
+            
+_ e _ f g h 
+# alignment number 22
+a b _ c _ _ d 
+              
+_ _ e _ f g h 
+# alignment number 23
+a b c _ _ d 
+            
+e _ _ f g h 
+# alignment number 24
+a _ b c _ _ d 
+              
+_ e _ _ f g h 
+# alignment number 25
+_ a b c _ _ d 
+              
+e _ _ _ f g h 
+# alignment number 26
+a b c _ d 
+          
+e f _ g h 
+# alignment number 27
+a _ b c _ d 
+            
+_ e f _ g h 
+# alignment number 28
+_ a b c _ d 
+            
+e _ f _ g h 
+# alignment number 29
+a b _ c _ d 
+            
+_ e f _ g h 
+# alignment number 30
+a b _ _ c _ d 
+              
+_ _ e f _ g h 
+# alignment number 31
+a b _ c _ d 
+            
+e _ f _ g h 
+# alignment number 32
+a _ b _ c _ d 
+              
+_ e _ f _ g h 
+# alignment number 33
+_ a b _ c _ d 
+              
+e _ _ f _ g h 
+# alignment number 34
+_ a b c _ d 
+            
+e f _ _ g h 
+# alignment number 35
+a _ b c _ d 
+            
+e f _ _ g h 
+# alignment number 36
+a _ _ b c _ d 
+              
+_ e f _ _ g h 
+# alignment number 37
+_ a _ b c _ d 
+              
+e _ f _ _ g h 
+# alignment number 38
+_ _ a b c _ d 
+              
+e f _ _ _ g h 
+# alignment number 39
+_ a b c d 
+          
+e f g _ h 
+# alignment number 40
+a _ b c d 
+          
+e f g _ h 
+# alignment number 41
+a _ _ b c d 
+            
+_ e f g _ h 
+# alignment number 42
+_ a _ b c d 
+            
+e _ f g _ h 
+# alignment number 43
+_ _ a b c d 
+            
+e f _ g _ h 
+# alignment number 44
+a b _ c d 
+          
+e f g _ h 
+# alignment number 45
+a _ b _ c d 
+            
+_ e f g _ h 
+# alignment number 46
+_ a b _ c d 
+            
+e _ f g _ h 
+# alignment number 47
+a b _ _ c d 
+            
+_ e f g _ h 
+# alignment number 48
+a b _ _ _ c d 
+              
+_ _ e f g _ h 
+# alignment number 49
+a b _ _ c d 
+            
+e _ f g _ h 
+# alignment number 50
+a _ b _ _ c d 
+              
+_ e _ f g _ h 
+# alignment number 51
+_ a b _ _ c d 
+              
+e _ _ f g _ h 
+# alignment number 52
+_ a b _ c d 
+            
+e f _ g _ h 
+# alignment number 53
+a _ b _ c d 
+            
+e f _ g _ h 
+# alignment number 54
+a _ _ b _ c d 
+              
+_ e f _ g _ h 
+# alignment number 55
+_ a _ b _ c d 
+              
+e _ f _ g _ h 
+# alignment number 56
+_ _ a b _ c d 
+              
+e f _ _ g _ h 
+# alignment number 57
+_ _ a b c d 
+            
+e f g _ _ h 
+# alignment number 58
+_ a _ b c d 
+            
+e f g _ _ h 
+# alignment number 59
+a _ _ b c d 
+            
+e f g _ _ h 
+# alignment number 60
+a _ _ _ b c d 
+              
+_ e f g _ _ h 
+# alignment number 61
+_ a _ _ b c d 
+              
+e _ f g _ _ h 
+# alignment number 62
+_ _ a _ b c d 
+              
+e f _ g _ _ h 
+# alignment number 63
+_ _ _ a b c d 
+              
+e f g _ _ _ h 
+# alignment number 64
+a b c d _ 
+          
+_ e f g h 
+# alignment number 65
+a b _ c d _ 
+            
+_ _ e f g h 
+# alignment number 66
+a b c d _ 
+          
+e _ f g h 
+# alignment number 67
+a _ b c d _ 
+            
+_ e _ f g h 
+# alignment number 68
+_ a b c d _ 
+            
+e _ _ f g h 
+# alignment number 69
+a b c _ d _ 
+            
+_ _ e f g h 
+# alignment number 70
+a b c _ _ d _ 
+              
+_ _ _ e f g h 
+# alignment number 71
+a b c _ d _ 
+            
+_ e _ f g h 
+# alignment number 72
+a b _ c _ d _ 
+              
+_ _ e _ f g h 
+# alignment number 73
+a b c _ d _ 
+            
+e _ _ f g h 
+# alignment number 74
+a _ b c _ d _ 
+              
+_ e _ _ f g h 
+# alignment number 75
+_ a b c _ d _ 
+              
+e _ _ _ f g h 
+# alignment number 76
+a b c d _ 
+          
+e f _ g h 
+# alignment number 77
+a _ b c d _ 
+            
+_ e f _ g h 
+# alignment number 78
+_ a b c d _ 
+            
+e _ f _ g h 
+# alignment number 79
+a b _ c d _ 
+            
+_ e f _ g h 
+# alignment number 80
+a b _ _ c d _ 
+              
+_ _ e f _ g h 
+# alignment number 81
+a b _ c d _ 
+            
+e _ f _ g h 
+# alignment number 82
+a _ b _ c d _ 
+              
+_ e _ f _ g h 
+# alignment number 83
+_ a b _ c d _ 
+              
+e _ _ f _ g h 
+# alignment number 84
+_ a b c d _ 
+            
+e f _ _ g h 
+# alignment number 85
+a _ b c d _ 
+            
+e f _ _ g h 
+# alignment number 86
+a _ _ b c d _ 
+              
+_ e f _ _ g h 
+# alignment number 87
+_ a _ b c d _ 
+              
+e _ f _ _ g h 
+# alignment number 88
+_ _ a b c d _ 
+              
+e f _ _ _ g h 
+# alignment number 89
+a b c d _ _ 
+            
+_ _ e f g h 
+# alignment number 90
+a b c _ d _ _ 
+              
+_ _ _ e f g h 
+# alignment number 91
+a b c d _ _ 
+            
+_ e _ f g h 
+# alignment number 92
+a b _ c d _ _ 
+              
+_ _ e _ f g h 
+# alignment number 93
+a b c d _ _ 
+            
+e _ _ f g h 
+# alignment number 94
+a _ b c d _ _ 
+              
+_ e _ _ f g h 
+# alignment number 95
+_ a b c d _ _ 
+              
+e _ _ _ f g h 
+# alignment number 96
+a b c d _ _ _ 
+              
+_ _ _ e f g h 
+# alignment number 97
+a b c d _ _ _ _ 
+                
+_ _ _ _ e f g h 
+# alignment number 98
+a b c d _ _ _ 
+              
+_ _ e _ f g h 
+# alignment number 99
+a b c _ d _ _ _ 
+                
+_ _ _ e _ f g h 
+# alignment number 100
+a b c d _ _ _ 
+              
+_ e _ _ f g h 

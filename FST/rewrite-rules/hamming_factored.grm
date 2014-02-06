@@ -1,0 +1,17 @@
+
+kBits = Optimize[
+    "0" | "1"
+];
+
+kFactor = Optimize[
+    "S" | "I" | "D"
+];
+
+sigma_star = Optimize[ (kBits | kFactor)* ];
+
+export SOURCE = Optimize[ "1010" ];
+export TARGET = Optimize[ "1110" ];
+export EDITS1 = Optimize[ ( ("0" : "0") | ("0" : "S"|"D" <1>) | ("1" : "1") | ("1" : "S"|"D" <1>) | ("" : "I" <1>) )* ];
+export EDITS2 = Optimize[ ( ("0" : "0") | ("1" : "1") | ("D" : "") | ("S" : kBits) | ("I" : kBits) )* ];
+export EDITS = Optimize[ EDITS1 @ EDITS2 ];
+export OUTPUT = Optimize[ SOURCE @ EDITS1 @ EDITS2 @ TARGET ];

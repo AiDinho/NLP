@@ -1,0 +1,2 @@
+sigma_star = Optimize[ ("k" | "i" | "u")* ];
+export KIKU_INPUT = Optimize[ "k" "i" "k" "u" "k" "u" "k" "u" "k" "u" ];

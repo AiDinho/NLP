@@ -1,0 +1,4 @@
+levenshtein distance = 35
+a n o o p _   s h o o p e d   d a   w h o o p   i n   _ d a   c o u p e  
+|     | |   |           | | |   | |           | | | |       | |          
+a   m o p e   _ _ f i r e d   _ a   l a s e r   i n   t h e   c _ _ a r 

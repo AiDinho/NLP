@@ -1,0 +1,4 @@
+levenshtein distance = 5
+g a m b l e  
+|   | |      
+g u m b _ o 

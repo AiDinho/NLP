@@ -1,0 +1,7 @@
+composed example1 and example2
+Initial State: 0_0
+1_1 3_2 ('b',) ('c',)
+0_0 1_1 ('a',) ('a',)
+2_1 3_2 ('b',) ('a',)
+0_0 2_1 ('b',) ('a',)
+Final State: 3_2

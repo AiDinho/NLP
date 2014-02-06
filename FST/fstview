@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# fstview: creates a PDF output graphically displaying an input binary FST (compiled by openfst)
+# requires the following software to be installed and in the PATH:
+## fstdraw : from openfst
+## dot : from graphviz
+## epstopdf : available on most *nix distributions
+
+if (test $# = 0); then (
+   echo "usage: fstview <fst>"
+); else (
+    fstdraw $1 > $1.dot
+    dot -Teps $1.dot  > $1.eps
+    epstopdf $1.eps 
+    echo "wrote file " $1.pdf
+); fi
+

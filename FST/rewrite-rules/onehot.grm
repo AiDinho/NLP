@@ -1,0 +1,6 @@
+# http://en.wikipedia.org/wiki/One-hot
+kBits = Optimize[ ("0" | "1") ];
+sigma_star = Optimize[ kBits* ];
+export ONEHOT = Optimize[ (("000" : "00000001") | ("001" : "00000010") | () | ())* ];
+export SOURCE = Optimize[ "010" ];
+export OUTPUT = Optimize[ SOURCE @ ONEHOT ];

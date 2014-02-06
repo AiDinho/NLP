@@ -1,0 +1,56 @@
+# Thrax grammar file for a simple context-dependent rewrite rule
+# Anoop Sarkar <anoop __at__ cs.sfu.ca>
+
+# The following rules create finite-state machines, and optimizes the
+# result. Optimize performs various optimizations on the transducer: removing
+# epsilon arcs, summing arc weights, determinizing and minimizing. The resulting
+# transducers is in general more compact and efficient. Especially in large
+# grammars, it is a good idea to optimize at least some of the intermediate
+# transducers. This can significantly speed up compilation.
+
+kVowels = Optimize[
+    "a" | "e" | "i" | "o" | "u" | "y"
+];
+
+kConsonants = Optimize[
+    "b" | "c" | "d" | "f" | "g" | "h" | "j" | "k" | "l" | "m" | "n" | "p" | "q" | "r" | "s" | "t" | "v" | "w" | "x" | "z"
+];
+
+# For context-dependent rewrite rules, one must specify the alphabet over which
+# the rule is to apply. This should be specified as the transitive closure of
+# all characters that one might expect to see in the input.  The simplest way to
+# do this in general is to allow it to consist of any sequence of bytes as
+# below. 
+
+# sigma_star = bytelib.kBytes*;
+sigma_star = Optimize[ (kVowels | kConsonants)* ];
+
+# Here are some examples of context-dependent-rewrite rules. The basic format
+# for a context-dependent rewrite rule is:
+#
+# CDRewrite[change, left_context, right_context, sigma_star]
+#
+# where change is a transducer that specifies a mapping between input and
+# output.
+#
+# In phonological rewrite rule notation this would be:
+#
+# input -> output / left_context _ right_context
+#
+# where "change" is a transducer, left_context and right_context acceptors, and
+# sigma_star as described above.  This specifies a left-to-right obligatory
+# rewrite rule. See the documentation for other options.
+#
+# In the first rule below the change is to convert a "u" to an "i" in the presence
+# of the vowel "i" followed by any number of consonants. The right context is null.
+# We can optionally specify 'ltr' for left to right, 'rtl' for right to left, and
+# 'sim' for simultaneous application of the rewrite rule. 'obl' stands for
+# obligatory and 'opt' stands for optional application (which typically leads to
+# more ambiguous output).
+
+left_context = ("i" kConsonants*);
+
+export KIKU_LTR = Optimize[ CDRewrite[ "u" : "i", left_context, "", sigma_star, 'ltr', 'obl'] ];
+export KIKU_RTL = Optimize[ CDRewrite[ "u" : "i", left_context, "", sigma_star, 'rtl', 'obl'] ];
+export KIKU_SIM = Optimize[ CDRewrite[ "u" : "i", left_context, "", sigma_star, 'sim', 'obl'] ];
+

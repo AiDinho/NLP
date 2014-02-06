@@ -1,0 +1,62 @@
+levenshtein distance = 5
+# printing out max 100 alignments
+# alignment number 1
+g a m b l e 
+|   | |     
+g u m b _ o 
+# alignment number 2
+g a _ m b l e 
+|     | |     
+g _ u m b _ o 
+# alignment number 3
+g _ a m b l e 
+|     | |     
+g u _ m b _ o 
+# alignment number 4
+g a m b l e _ 
+|   | |       
+g u m b _ _ o 
+# alignment number 5
+g a _ m b l e _ 
+|     | |       
+g _ u m b _ _ o 
+# alignment number 6
+g _ a m b l e _ 
+|     | |       
+g u _ m b _ _ o 
+# alignment number 7
+g a m b l e 
+|   | |     
+g u m b o _ 
+# alignment number 8
+g a _ m b l e 
+|     | |     
+g _ u m b o _ 
+# alignment number 9
+g _ a m b l e 
+|     | |     
+g u _ m b o _ 
+# alignment number 10
+g a m b l _ e 
+|   | |       
+g u m b _ o _ 
+# alignment number 11
+g a _ m b l _ e 
+|     | |       
+g _ u m b _ o _ 
+# alignment number 12
+g _ a m b l _ e 
+|     | |       
+g u _ m b _ o _ 
+# alignment number 13
+g a m b _ l e 
+|   | |       
+g u m b o _ _ 
+# alignment number 14
+g a _ m b _ l e 
+|     | |       
+g _ u m b o _ _ 
+# alignment number 15
+g _ a m b _ l e 
+|     | |       
+g u _ m b o _ _ 
