@@ -1,8 +1,11 @@
-from fst import fst 
+from fst import fst
 
 class myFST(fst.FST):
     def recognize(self, input, output):
         # insert your code here
+    
+    
+    
         return False
 
 # you can define an FST either this way:
