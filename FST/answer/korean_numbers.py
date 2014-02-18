@@ -3,7 +3,7 @@ import sys, re
 
 class korean_FST(fst.FST):
     def constructFST(self):
-        for i in range(1,15):    #there are 14 states
+        for i in range(1,16):    #there are 15 states
             self.add_state(str(i))
             
             self.initial_state = '1'
