@@ -34,8 +34,8 @@ class dictCrawler:
         
     def crawlManage(self):
         for word in self.vocab:
-            time.sleep(1)
-            k = randint(0,len(self.urlBases)-1)
+            time.sleep(1)   #a time interval
+            k = randint(0,len(self.urlBases)-1)  #randomly search among sites
             url = str(self.urlBases[k]) + str(word)            
             with open('./dict/raw/'+str(word), 'w') as fhandle:
                 html = self.crawl(url)
