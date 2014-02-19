@@ -53,7 +53,7 @@ def get_inter_expr(number):
     number = number[::-1]  #reverse the number
     for i in range(len(number)):
         digit = number[i]
-        if loop_counter == 1:
+        if loop_counter == 1:     # '1' is not ruled out for this position
             result = digit +' '+ result
         elif loop_counter == 2:
             if digit != '1':            
@@ -70,7 +70,7 @@ def get_inter_expr(number):
                 result = digit +' '+'[ 1 0 ^ 3 ]'+' '+ result
             else:
                 result = '[ 1 0 ^ 3 ]' +' '+ result     
-            if (i+1 == 4) and (i+1 != len(number)):
+            if (i+1 == 4) and (i+1 != len(number)): #when there is no more digit, don't add it
                 result = '[ 1 0 ^ 4 ]' +' '+ result
             elif (i+1 == 8) and (i+1 != len(number)):
                 result = '[ 1 0 ^ 8 ]' +' '+ result 
