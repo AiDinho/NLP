@@ -3,7 +3,7 @@ import sys, re
 
 class korean_FST(fst.FST):
     def constructFST(self):
-        for i in range(0,5):    #there are 2 states
+        for i in range(0,7):    #there are 7 states
             self.add_state(str(i))
         self.initial_state = '1'
         
@@ -15,7 +15,6 @@ class korean_FST(fst.FST):
         self.add_arc('0', '0', ('2'), (''))
         self.add_arc('0', '0', ('3'), (''))
         self.add_arc('0', '0', ('4'), ('man '))
-        self.add_arc('0', '0', ('8'), ('eok '))
         self.add_arc('0', '1', (']'), (''))
         self.add_arc('0', '4', ('#'), (''))
         
@@ -36,12 +35,38 @@ class korean_FST(fst.FST):
         self.add_arc('3', '3', ('2'), ('baek '))
         self.add_arc('3', '3', ('3'), ('cheon '))
         self.add_arc('3', '3', ('4'), ('man '))
-        self.add_arc('3', '3', ('8'), ('eok '))
+        self.add_arc('3', '5', ('8'), ('eok '))
         self.add_arc('3', '1', (']'), (''))
         self.add_arc('2', '1', (']'), ('sib '))   # ']' appears without '^'
         
         self.add_arc('1', '4', ('#'), (''))
-            
+        
+        #5,6 are used to handle 1,0000,0000; once a non-zero number occurs, go back to 1        
+        self.add_arc('5', '6', ('0'), (''))        
+        self.add_arc('5', '1', ('1'), ('il '))
+        self.add_arc('5', '1', ('2'), ('i '))
+        self.add_arc('5', '1', ('3'), ('sam '))
+        self.add_arc('5', '1', ('4'), ('sa '))
+        self.add_arc('5', '1', ('5'), ('o '))
+        self.add_arc('5', '1', ('6'), ('yuk'))
+        self.add_arc('5', '1', ('7'), ('chil '))
+        self.add_arc('5', '1', ('8'), ('pal '))
+        self.add_arc('5', '1', ('9'), ('gu '))
+        self.add_arc('5', '2', ('['), (''))
+        self.add_arc('5', '5', (']'), (''))
+         
+        self.add_arc('6', '6', ('['), (''))
+        self.add_arc('6', '6', ('1'), (''))
+        self.add_arc('6', '6', ('0'), (''))
+        self.add_arc('6', '6', ('^'), (''))
+        self.add_arc('6', '6', ('2'), (''))
+        self.add_arc('6', '6', ('3'), (''))
+        self.add_arc('6', '6', ('4'), (''))
+        self.add_arc('6', '5', (']'), (''))
+        self.add_arc('6', '4', ('#'), (''))
+        
+        self.add_arc('5', '4', ('#'), (''))
+        
         self.set_final('4')  
         
     def korean_transduce(self, expr):
