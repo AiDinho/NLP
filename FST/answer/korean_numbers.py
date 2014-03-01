@@ -111,7 +111,8 @@ def preprocess(rawNumber):
 if __name__ == '__main__':
     f = korean_FST('korean')
     f.constructFST()
-    for line in sys.stdin:
-        line = line[:-1]
-        print f.korean_transduce((get_inter_expr(preprocess(line))))    
+    print f.korean_transduce((get_inter_expr(preprocess('100001001'))))  
+    #for line in sys.stdin:
+     #   line = line[:-1]
+      #  print f.korean_transduce((get_inter_expr(preprocess(line))))    
     
