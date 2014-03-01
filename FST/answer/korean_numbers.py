@@ -100,8 +100,8 @@ def get_inter_expr(number):
             elif (i+1 == 8) and (i+1 != len(number)):
                 result = '[ 1 0 ^ 8 ]' +' '+ result 
         loop_counter = 1 + loop_counter % 4
-    if (number[len(number)-1] == '1') and (len(number)%4 == 1):
-        result = result[2:]  #get rid of 1 if it is a lead digit
+    if (number[len(number)-1] == '1') and (len(number)%4 == 1) and (len(number)!=1):
+        result = result[2:]  #get rid of 1 if it is a lead digit, but not the only digit
     return result
     
     
