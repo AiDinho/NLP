@@ -48,7 +48,8 @@ if __name__ == '__main__':
         print "%s:test:%lf" % (method, default_tagger.evaluate(test))
     elif method == 'regexp':
         # regexp tagger
-        patterns = [
+        # patterns that used to tag; Notice the order may affect the performance
+        patterns = [    
         (r'.*ing$', 'VBG'),
         (r'.*ed$','VBD'),
         (r'.*es$','VBZ'),
@@ -65,9 +66,12 @@ if __name__ == '__main__':
         print "%s:test:%lf" % (method, regexp_tagger.evaluate(test))
     elif method == 'lookup':
         # lookup tagger
-        default_tag = default_tag(train)
-        default_tagger = nltk.DefaultTagger(default_tag)
-        print "%s:test:%lf" % (method, default_tagger.evaluate(test))
+        fd = nltk.FreqDist(brown.words(categories='news'))
+        cfd = nltk.ConditionalFreqDist(brown.tagged_words(categories='news'))
+        most_freq_words = fd.keys()[:1000]
+        likely_tags = dict((word,cfd[word].max()) for word in most_freq_words)
+        lookup_tagger = nltk.UnigramTagger(model=likely_tags)
+        print "%s:test:%lf" % (method, lookup_tagger.evaluate(test))
     elif method == 'simple_backoff':
         # simple backoff tagger
         default_tag = default_tag(train)
