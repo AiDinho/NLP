@@ -1,4 +1,3 @@
-
 import nltk
 from nltk.probability import FreqDist, ConditionalFreqDist
 from nltk.corpus import brown
@@ -49,9 +48,21 @@ if __name__ == '__main__':
         print "%s:test:%lf" % (method, default_tagger.evaluate(test))
     elif method == 'regexp':
         # regexp tagger
-        default_tag = default_tag(train)
-        default_tagger = nltk.DefaultTagger(default_tag)
-        print "%s:test:%lf" % (method, default_tagger.evaluate(test))
+        patterns = [
+        (r'.*ing$', 'VBG'),
+        (r'.*ed$','VBD'),
+        (r'.*es$','VBZ'),
+        (r'.*ly$', 'RB'),          
+        (r'.*able$', 'JJ'),               
+        (r'.*ould$','MD'),
+        (r'(The|the|A|a|An|an)$', 'AT'),  
+        (r'.*\'s$', 'NN$'),
+        (r'.*s$','NNS'),
+        (r'^-?[0-9]+(.[0-9]+)?$', 'CD'),
+        (r'.*', 'NN')
+        ]
+        regexp_tagger = nltk.RegexpTagger(patterns)
+        print "%s:test:%lf" % (method, regexp_tagger.evaluate(test))
     elif method == 'lookup':
         # lookup tagger
         default_tag = default_tag(train)
