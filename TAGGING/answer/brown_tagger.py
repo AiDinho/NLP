@@ -40,19 +40,18 @@ if __name__ == '__main__':
 
     train = brown.tagged_sents(categories=trainsection)
     test = brown.tagged_sents(categories=testsection)
-
-    if method == 'default':
-        # default tagger
-        default_tag = default_tag(train)
-        default_tagger = nltk.DefaultTagger(default_tag)
-        print "%s:test:%lf" % (method, default_tagger.evaluate(test))
-    elif method == 'regexp':
-        # regexp tagger
-        # patterns that used to tag; Notice the order may affect the performance
-        patterns = [    
+    
+    # default tagger   
+    default_tag = default_tag(train)
+    default_tagger = nltk.DefaultTagger(default_tag)
+    
+    # regexp tagger
+    # patterns that used to tag; Notice the order may affect the performance
+    patterns = [    
         (r'.*ing$', 'VBG'),
         (r'.*ed$','VBD'),
         (r'.*es$','VBZ'),
+        (r'.*ness$', 'NN'),  
         (r'.*ly$', 'RB'),          
         (r'.*able$', 'JJ'),               
         (r'.*ould$','MD'),
@@ -62,33 +61,47 @@ if __name__ == '__main__':
         (r'^-?[0-9]+(.[0-9]+)?$', 'CD'),
         (r'.*', 'NN')
         ]
-        regexp_tagger = nltk.RegexpTagger(patterns)
+    regexp_tagger = nltk.RegexpTagger(patterns)
+    
+    # lookup tagger
+    fd = nltk.FreqDist(brown.words(categories='news'))
+    cfd = nltk.ConditionalFreqDist(brown.tagged_words(categories='news'))
+    most_freq_words = fd.keys()[:1000]
+    likely_tags = dict((word,cfd[word].max()) for word in most_freq_words)
+    lookup_tagger = nltk.UnigramTagger(model=likely_tags)    
+    
+    # unigram backoff tagger
+    unigram_tagger = nltk.UnigramTagger(train, backoff = default_tagger)
+    
+    # bigram backoff tagger    
+    
+    if method == 'default':
+        # use default tagger
+        print "%s:test:%lf" % (method, default_tagger.evaluate(test))
+    elif method == 'regexp':
+        # use regexp tagger
         print "%s:test:%lf" % (method, regexp_tagger.evaluate(test))
     elif method == 'lookup':
-        # lookup tagger
-        fd = nltk.FreqDist(brown.words(categories='news'))
-        cfd = nltk.ConditionalFreqDist(brown.tagged_words(categories='news'))
-        most_freq_words = fd.keys()[:1000]
-        likely_tags = dict((word,cfd[word].max()) for word in most_freq_words)
-        lookup_tagger = nltk.UnigramTagger(model=likely_tags)
+        # use lookup tagger
         print "%s:test:%lf" % (method, lookup_tagger.evaluate(test))
     elif method == 'simple_backoff':
-        # simple backoff tagger
-        default_tag = default_tag(train)
-        default_tagger = nltk.DefaultTagger(default_tag)
-        print "%s:test:%lf" % (method, default_tagger.evaluate(test))
+        # use simple backoff tagger
+        most_freq_words = fd.keys()[:1500]
+        likely_tags = dict((word,cfd[word].max()) for word in most_freq_words)
+        lookup_tagger = nltk.UnigramTagger(model=likely_tags) 
+   
+        backoff_reg_tagger = nltk.RegexpTagger(patterns, backoff = default_tagger)
+        lookup_tagger = nltk.UnigramTagger(model=likely_tags, backoff = backoff_reg_tagger)
+        print "%s:test:%lf" % (method, lookup_tagger.evaluate(test))
     elif method == 'unigram':
-        # unigram backoff tagger
-        default_tag = default_tag(train)
-        default_tagger = nltk.DefaultTagger(default_tag)
-        print "%s:test:%lf" % (method, default_tagger.evaluate(test))
+        # use unigram backoff tagger
+        print "%s:test:%lf" % (method, unigram_tagger.evaluate(test))
     elif method == 'bigram':
-        # bigram backoff tagger
-        default_tag = default_tag(train)
-        default_tagger = nltk.DefaultTagger(default_tag)
+        # use bigram backoff tagger
+
         print "%s:test:%lf" % (method, default_tagger.evaluate(test))
     elif method == 'trigram':
-        # trigram backoff tagger
+        # use trigram backoff tagger
         default_tag = default_tag(train)
         default_tagger = nltk.DefaultTagger(default_tag)
         print "%s:test:%lf" % (method, default_tagger.evaluate(test))
