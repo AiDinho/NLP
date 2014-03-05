@@ -137,7 +137,10 @@ if __name__ == '__main__':
         print "%s:%s:%s" % (method, 'train', compute_perplexity(bigram, train))
         print "%s:%s:%s" % (method, 'test', compute_perplexity(bigram, test))
     elif method == 'interpolation':
-        V = len(brown.sents(categories=trainsection))
+        sents = []
+        for l in brown.sents(categories=trainsection):
+            sents = sents + l
+        V = len(sents)
         print "%s:%s:%s" % (method, 'train', compute_perplexity_interp(unigram, bigram, train, lambda_vector, V))
         print "%s:%s:%s" % (method, 'test', compute_perplexity_interp(unigram, bigram, test, lambda_vector, V))
     elif method == 'add_one':
