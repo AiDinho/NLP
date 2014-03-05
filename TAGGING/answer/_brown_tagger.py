@@ -114,7 +114,7 @@ if __name__ == '__main__':
         # trigram backoff tagger
         unigram_tagger = nltk.UnigramTagger(train, backoff = default_tagger)
         bigram_tagger = nltk.BigramTagger(train, backoff = unigram_tagger)
-        trigram_tagger = nltk.TrigramTagger(train, backoff = bigram_tagger)
+        trigram_tagger = nltk.TrigramTagger(train, cutoff=10, backoff = bigram_tagger)
         print "%s:test:%lf" % (method, trigram_tagger.evaluate(test))
     else:
         print >>sys.stderr, "unknown method"
