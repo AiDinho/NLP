@@ -31,5 +31,5 @@ classifier = nltk.NaiveBayesClassifier.train(train_set)
 devacc = nltk.classify.accuracy(classifier, dev_set)
 testacc = nltk.classify.accuracy(classifier, test_set)
 
-print "prep:dev:%lf" % (devacc)
-print "prep:test:%lf" % (testacc)
+print "all:dev:%lf" % (devacc)
+print "all:test:%lf" % (testacc)

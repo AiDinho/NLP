@@ -1,0 +1,10 @@
+find the algo making the tree into a binary one
+
+
+precision s1
+
+recall s2
+
+
+
+q: what is the algo to recognize the sentence
