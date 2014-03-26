@@ -307,18 +307,18 @@
 1    VBZ    suggests
 1    VBZ    knows
 
-# Verbs (present, plural, third person). ****
-1    VB    have
-1    VB    speak
-1    VB    cover
-1    VB    are
-1    VB    ride
-1    VB    drink
-1    VB    grow
-1    VB    carry
-1    VB    suggest
-1    VB    migrate
-1    VB    know
+# Verbs (present, plural, third person). ****or non-third person so, give VBP here
+1    VBP    have
+1    VBP    speak
+1    VBP    cover
+1    VBP    are
+1    VBP    ride
+1    VBP    drink
+1    VBP    grow
+1    VBP    carry
+1    VBP    suggest
+1    VBP    migrate
+1    VBP    know
 
 # Wh-determiners.
 1    WDT    that
@@ -513,4 +513,3 @@
 1    Misc    mother
 1    Misc    run
 1    Misc    away
-

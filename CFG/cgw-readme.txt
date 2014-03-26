@@ -12,18 +12,23 @@ And I made some observations:
 (4) Atis3.treebank uses the same tag set as the Penn Treebank (also contains some phrase level tags).
 (5) Many words in the allowed word list do not have tagged corpus, (e.g. 'sixty' is not in either brown or treebank)
 (6) In the given Vocab.gr, words are well-categorized.
+(7) There is a corpus in nltk.corpus.webtext.sents('grail.txt'), which is the target text
 
-Step 1, improve the Vocab.gr
+Step 1, improve the Vocab.gr:
 
 - Given (2) I decided NOT to use the brown tag set but the nltk.corpus.treebank to re-tag the Vocab.gr
 - Given (3),(5),(6) I decided to hand-tag and hand-re-tag the Vocab.gr according to penn tree band tag set
 - Use Penn Treebank pos tag set representations (https://www.comp.leeds.ac.uk/ccalas/tagsets/upenn.html)
 - Add some new tags for the words to model the ambiguity.
+- Add some tages by hand.
 - Tune the weights of each tag-word pair, using treebank data
-
+- *Given (7), I used the nltk pos tagger to tag the sentences, given it is trained from a tree bank, similar to penn treebank
+  - Generate a file called "Vocab_grail.gr", providing the tags (with weights) additional words part of Vocab.gr, hand tag some untagged Misc tags, 
+    add/replace the content of the file to the Vocab.gr  
+  
 (NLTK and Penn Treebank Official Tag for "--" seems to be inconsistent)
 
-Step 2:
+Step 2, 
 
 
 
