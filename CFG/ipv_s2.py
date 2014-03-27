@@ -14,6 +14,24 @@ tagged_sents = []
 
 print "...Generating..."
 
+
+# this part of code add wights to the S2.gr
+def addprefix(word):
+    if word == "." or word == "," or word == ":":
+        return "$"+word
+    else:
+        return word
+
+#for sent in nltk.corpus.webtext.sents('grail.txt'):
+ #   tagged_sents = tagged_sents + nltk.pos_tag(sent)
+
+tagged_sents_penn = nltk.corpus.treebank.tagged_words()
+tagged_sents = [addprefix(tag) for word, tag in tagged_sents_penn]
+cfd = nltk.ConditionalFreqDist([tuple(tagged_sents[i:i+2]) for i in range(len(tagged_sents)-1)])
+
+
+
+
 for line in fvocab:
     if line.startswith("\n") or line.startswith("#"):
         continue
@@ -34,18 +52,15 @@ for i in range(len(tagset)):
         if tagset[j][0] == "_":
             continue
         if i == j:
-            fs2.write(str(1)+"    _"+tagset[i]+"    "+tagset[j]+"\n")
+            #fs2.write(str(1)+"    _"+tagset[i]+"    "+tagset[j]+"\n")
+            fs2.write(str(1+cfd[tagset[i]][tagset[j]])+"    _"+tagset[i]+"    "+tagset[j]+"\n")
         else:
-            fs2.write(str(1)+"    _"+tagset[i]+"    "+tagset[i]+"    _"+tagset[j]+"\n")
+            #fs2.write(str(1)+"    _"+tagset[i]+"    "+tagset[i]+"    _"+tagset[j]+"\n")            
+            fs2.write(str(1+cfd[tagset[i]][tagset[j]])+"    _"+tagset[i]+"    "+tagset[i]+"    _"+tagset[j]+"\n")
 
 
 print "...Finish!"
-'''
-for sent in nltk.corpus.webtext.sents('grail.txt'):
-    tagged_sents = tagged_sents + nltk.pos_tag(sent)
-    
-print tagged_sents
-'''
+
     
 fvocab.close()
 fs2.close()

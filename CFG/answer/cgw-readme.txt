@@ -36,7 +36,13 @@ Step 2, generate the S2.gr, based on Vocab.gr
 
 - In this step, basically I permutate the combinations of tags, to generate the S2.gr
 - Run the program on the examples, compared the cases having weights on vocab or not,
-  and I found out that for S2.gr, with weights we have a slightly better result (-9.17 > -9.21)with the *no weights* one, which is a little bit surprising to me
+  and I found out that for S2.gr, with weights we have a slightly better result (-9.21 -> -9.17)with the *no weights* one, which is a little bit surprising to me
+- Then, I tried to add weights to this S2.gr, and I tried it using two ways. One is to
+  use the text of "grail.txt", to generate the bigrams and count. It increase the -entropy to -9.13; The other is to use penn treebank, which increase the -entropy to -9.01, and with some hand tuning, it improved to -8.93.
+  (Notice #1, I found keeping the Misc tags, instead of moveing them all away in step 2, gives a better result. I think it is because those untagged ones are rather unique,
+For example, although we can see 'm as "am", 're as "are", the uniqueness of those tags lost, so the result actually worsen)  
+
+Step 3,
 
 
 
