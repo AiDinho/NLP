@@ -4,7 +4,7 @@ import nltk
 
 try:
     fvocab_in = open("./Vocab.gr", "r")# notice, this file has been modified to fit the penn tag sets
-    fvocab_out = open("./Vocab_grail.gr","w")
+    #fvocab_out = open("./Vocab_grail.gr","w")
 except:
     print "Cannot open file."
 
@@ -28,19 +28,16 @@ for line in fvocab_in:
         count = row[0]        
         tag = row[1]        
         word = row[2]
-        rest = ""
-        if len(row) > 3:
-            rest = row[3]
         
         if tag == "Misc":
             keys = cfd[word].keys()
             if keys == []:
-                fvocab_out.write("1    Misc    "+word+"    "+rest+"\n")
+                fvocab_out.write("1    Misc    "+word+"\n")
             else:
                 for key in keys:
-                    fvocab_out.write(str(cfd[word][key])+"    "+key+"    "+word+"    "+rest+"\n") #TODO Hand tune the weights
+                    fvocab_out.write(str(cfd[word][key])+"    "+key+"    "+word+"\n") #TODO Hand tune the weights
         else:
-            fvocab_out.write(str(1+cfd_reverse[tag][word])+"    "+tag+"    "+word+"    "+rest+"\n")
+            fvocab_out.write(str(1+cfd_reverse[tag][word])+"    "+tag+"    "+word+"\n")
             
 print "...Finish!"
 fvocab_in.close()

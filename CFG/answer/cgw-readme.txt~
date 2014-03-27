@@ -28,8 +28,7 @@ So in ipv_vocab.py:
 - Rename Vocab_grail.gr to Vocab.gr as the part in the answer (having two names simply makes the programs look neat)
 - Hand-tag those pairs still with Misc tag, all Misc are get rid of, results are in Vocab_grail_tuned.gr 
   (Notice #1, the "Vocab.gr" ipv_vocab.py reads in has been modified to fit the penn tree tag set)
-  (Notice #2, we cannot tag , . ! etc. to the original tags, since it causes cycle. I add $ to the tag, namely (,)->($,)
- 
+  (Notice #2, we cannot tag , . ! etc. to the original tags, since it causes cycle. I add $ to the tag, namely (,)->($,) 
 (NLTK and Penn Treebank Official Tag for "--" seems to be inconsistent)
 
 Step 2, generate the S2.gr, based on Vocab.gr
@@ -37,7 +36,6 @@ Step 2, generate the S2.gr, based on Vocab.gr
 - In this step, basically I permutate the combinations of tags, to generate the S2.gr
 - Run the program on the examples, compared the cases having weights on vocab or not,
   and I found out that for S2.gr, with weights we have a slightly better result (-9.17 > -9.21)with the *no weights* one, which is a little bit surprising to me
-
 
 
 

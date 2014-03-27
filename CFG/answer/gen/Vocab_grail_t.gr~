@@ -66,19 +66,19 @@
 # Proper nouns.  Note that our Proper tag is just for people.
 1    NNP    Arthur
 1    NNP    Guinevere
-1    NNP    _Sir _Lancelot
-1    NNP    _Sir _Bedevere
-1    NNP    _Sir _Knight
+1    NNP    _Sir
+1    NNP    _Sir
+1    NNP    _Sir
 1    NNP    Zoot
 1    NNP    Dingo
 1    NNP    Patsy
-1    NNP    _Uther _Pendragon
-1    _Sir      Sir
-1    _Lancelot Lancelot
-1    _Bedevere Bedevere
+1    NNP    _Uther
+1    _Sir    Sir
+1    _Lancelot    Lancelot
+1    _Bedevere    Bedevere
 1    _Uther    Uther
-1    _Pendragon Pendragon
-1    _Knight   Knight
+1    _Pendragon    Pendragon
+1    _Knight    Knight
 
 # Verbs (third person singular present).
 # Note that only transitive verbs get our VerbT tag,
@@ -91,16 +91,16 @@
 1    VBZ    rides
 
 # End-of-sentence.
-1    $.    !
-1    $.    .
-1    $.    ?
+1    .    !
+1    .    .
+1    .    ?
 
 # Pauses.
-1    $,    ,
-1    $:    ...
-1    $:    --
-1    $:    ;
-1    $:    :
+1    ,    ,
+1    :    ...
+1    :    --
+1    :    ;
+1    :    :
 
 # Coordinating conjunctions.
 1    CC    and
@@ -195,14 +195,14 @@
 
 # More proper nouns, not people.
 
-1    NNP   Camelot
+1    NNP    Camelot
 1    NNP    England
-1    NNP    _Holy _Grail
-1    _Holy   Holy
-1    _Grail  Grail
-1    Misc    _Round _Table
-1    _Round  Round
-1    _Table  Table
+1    NNP    _Holy
+1    _Holy    Holy
+1    _Grail    Grail
+1    NNP    _Round
+1    _Round    Round
+1    _Table    Table
 
 # Plural proper nouns.
 1    NNPS    Britons
