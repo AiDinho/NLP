@@ -42,7 +42,9 @@ Step 2, generate the S2.gr, based on Vocab.gr
   (Notice #1, I found keeping the Misc tags, instead of moveing them all away in step 2, gives a better result. I think it is because those untagged ones are rather unique,
 For example, although we can see 'm as "am", 're as "are", the uniqueness of those tags lost, so the result actually worsen)  
 
-Step 3,
+Step 3, generate the S1.gr
+
+Using nltk.Tree, we can transform the trees in atis3.treebank into eCNF.
 
 
 

@@ -38,7 +38,7 @@ for line in fvocab_in:
                 fvocab_out.write("1    Misc    "+word+"    "+rest+"\n")
             else:
                 for key in keys:
-                    fvocab_out.write(str(cfd[word][key])+"    "+key+"    "+word+"    "+rest+"\n") #TODO Hand tune the weights
+                    fvocab_out.write(str(1+cfd[word][key])+"    "+key+"    "+word+"    "+rest+"\n") #TODO Hand tune the weights
         else:
             fvocab_out.write(str(1+cfd_reverse[tag][word])+"    "+tag+"    "+word+"    "+rest+"\n")
             
