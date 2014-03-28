@@ -39,7 +39,9 @@ Step 2, generate the S2.gr, based on Vocab.gr
   and I found out that for S2.gr, with weights we have a slightly better result (-9.21 -> -9.17)with the *no weights* one, which is a little bit surprising to me
 - Then, I tried to add weights to this S2.gr, and I tried it using two ways. One is to
   use the text of "grail.txt", to generate the bigrams and then generate the weights for each rule. It increase the -entropy to -9.13; The other is to use penn treebank, which increase the -entropy to -8.62, and with some hand tuning, especially for the start symbol rules and rules for ".". It improved to -8.0002.
-  (Notice #1, I found keeping the Misc tags for words like 'm and 're, instead of replacing them all, gives a better result. I think it is because those ones are rather unique then just being "am" and "are". That's why use Misc to tag them is a good option.)
+  (Notice #1, I found keeping the Misc tags for words like 'm and 're, instead of replacing them all, gives a better result. I think it is because those ones are rather unique then just being "am" and "are". That's why use Misc to tag them is a good option.
+
+For example, although we can see 'm as "am", 're as "are", the uniqueness of those tags lost, so the result actually worsen)  
 
 Step 3, generate the S1.gr
 

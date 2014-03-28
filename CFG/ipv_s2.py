@@ -6,8 +6,8 @@ Created on Wed Mar 26 16:17:51 2014
 """
 import nltk
 
-fvocab = open("./Vocab_grail_no_weights.gr","r") 
-fs2 = open("S2_grail.gr","w")
+fvocab = open("./Vocab.gr","r") 
+fs2 = open("S2.gr","w")
 
 tagset = []
 tagged_sents = []
@@ -30,8 +30,6 @@ tagged_sents = [addprefix(tag) for word, tag in tagged_sents_penn]
 cfd = nltk.ConditionalFreqDist([tuple(tagged_sents[i:i+2]) for i in range(len(tagged_sents)-1)])
 
 
-
-
 for line in fvocab:
     if line.startswith("\n") or line.startswith("#"):
         continue
@@ -48,15 +46,14 @@ for i in range(len(tagset)):
 for i in range(len(tagset)):
     if tagset[i][0] == "_":
         continue
+    fs2.write(str(1)+"    _"+tagset[i]+"    "+tagset[i]+"\n")
     for j in range(len(tagset)):
+        std_tag1 = tagset[i].rstrip("_t")  # used to lookup cfd        
+        std_tag2 = tagset[j].rstrip("_t")
         if tagset[j][0] == "_":
             continue
-        if i == j:
-            #fs2.write(str(1)+"    _"+tagset[i]+"    "+tagset[j]+"\n")
-            fs2.write(str(1+cfd[tagset[i]][tagset[j]])+"    _"+tagset[i]+"    "+tagset[j]+"\n")
-        else:
-            #fs2.write(str(1)+"    _"+tagset[i]+"    "+tagset[i]+"    _"+tagset[j]+"\n")            
-            fs2.write(str(1+cfd[tagset[i]][tagset[j]])+"    _"+tagset[i]+"    "+tagset[i]+"    _"+tagset[j]+"\n")
+        #fs2.write(str(1)+"    _"+tagset[i]+"    "+tagset[i]+"    _"+tagset[j]+"\n")            
+        fs2.write(str(1+cfd[std_tag1][std_tag2])+"    _"+tagset[i]+"    "+tagset[i]+"    _"+tagset[j]+"\n")
 
 
 print "...Finish!"
