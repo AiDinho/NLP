@@ -40,7 +40,7 @@ for tag in tagset:
     if tag[0] == ("_"):
         continue
     tag = tag.rstrip("_t").lstrip("$")
-    fs.write(str(1+(1+fd[tag])/10)+"    S2    _"+tag+"_t\n")
+    fs.write(str(1+(1+fd[tag])/10)+"    S2    "+tag.rstrip("_t")+"\n")
 
 print "...Finish!"
 
