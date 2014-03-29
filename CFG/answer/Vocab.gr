@@ -11,64 +11,64 @@
 
 # Singular and mass nouns.  Notice that only the
 # ones that start with consonants get our NN_t tag.
-1    NN_t    castle
-1    NN_t    king
+5    NN_t    castle
+3    NN_t    king
 1    NN_t    defeater
 1    NN_t    sovereign
 1    NN_t    servant
 1    NN_t    corner
-1    NN_t    land
-1    NN_t    quest
+4    NN_t    land
+5    NN_t    quest
 1    NN_t    chalice
-1    NN_t    master
+2    NN_t    master
 1    NN_t    horse
 1    NN_t    fruit
-1    NN_t    swallow
+4    NN_t    swallow
 1    NN_t    sun
 1    NN_t    winter
-1    NN_t    coconut
-1    NN_t    pound
+2    NN_t    coconut
+2    NN_t    pound
 1    NN_t    husk
 1    NN_t    home
 1    NN_t    weight
 1    NN_t    story
 
 # Determiners.
-1    DT_t    a
+15    DT_t    a
 1    DT_t    another
 1    DT_t    any
 1    DT_t    each
 1    DT_t    every
-1    DT_t    no
-1    DT_t    that
-1    DT_t    the
-1    DT_t    this
+5    DT_t    no
+2    DT_t    that
+60   DT_t    the
+6    DT_t    this
 
 # Prepositions.
 1    IN_t    above
 1    IN_t    across
-1    IN_t    at
+6    IN_t    at
 1    IN_t    below
-1    IN_t    by
-1    IN_t    for
-1    IN_t    from
-1    IN_t    into
+4    IN_t    by
+6    IN_t    for
+2    IN_t    from
+2    IN_t    into
 1    IN_t    near
-1    IN_t    of
-1    IN_t    on
+32    IN_t    of
+8    IN_t    on
 1    IN_t    over
 1    IN_t    through
-1    IN_t    with
+8    IN_t    with
 
 # Proper nouns.  Note that our Proper tag is just for people.
-1    NNP_t    Arthur
+20    NNP_t    Arthur
 1    NNP_t    Guinevere
 1    NNP_t    _Sir _Lancelot
 1    NNP_t    _Sir _Bedevere
 1    NNP_t    _Sir _Knight
-1    NNP_t    Zoot
+8    NNP_t    Zoot
 1    NNP_t    Dingo
-1    NNP_t    Patsy
+4    NNP_t    Patsy
 1    NNP_t    _Uther _Pendragon
 1    _Sir      Sir
 1    _Lancelot Lancelot
@@ -80,27 +80,27 @@
 # Verbs (third person singular present).
 # Note that only transitive verbs get our VerbT tag,
 # and some of those could also function as intransitives!
-1    VBZ_t    has
+2    VBZ_t    has
 1    VBZ_t    covers
-1    VBZ_t    is
+5    VBZ_t    is
 1    VBZ_t    drinks
 1    VBZ_t    carries
 1    VBZ_t    rides
 
 # End-of-sentence.
-1    $._t    !
-1    $._t    .
-1    $._t    ?
+5    $._t    !
+15    $._t    .
+2    $._t    ?
 
 # Pauses.
 1    $,_t    ,
 1    $:_t    ...
 1    $:_t    --
 1    $:_t    ;
-1    $:_t    :
+10    $:_t    :
 
 # Coordinating conjunctions.
-1    CC_t    and
+2    CC_t    and
 1    CC_t    but
 1    CC_t    or
 1    CC_t    either
@@ -111,7 +111,7 @@
 # Numbers.
 1    CD_t    eight
 1    CD_t    five
-1    CD_t    one
+3    CD_t    one
 1    CD_t    5.5
 1    CD_t    sixty
 1    CD_t    5,000
@@ -120,22 +120,22 @@
 1    EX_t    there
 
 # Subordinating conjunctions.
-1    IN_t    that
+4    IN_t    that
 1    IN_t    so
 1    IN_t    while
 1    IN_t    because
-1    IN_t    if
+2    IN_t    if
 
 # Modals.
-1    MD_t    can
-1    MD_t    could
-1    MD_t    may
+3    MD_t    can
+2    MD_t    could
+2    MD_t    may
 1    MD_t    might
-1    MD_t    must
+3    MD_t    must
 1    MD_t    ought
-1    MD_t    shall
+2    MD_t    shall
 1    MD_t    should
-1    MD_t    will
+2    MD_t    will
 1    MD_t    would
 
 
@@ -192,8 +192,8 @@
 
 # More proper nouns, not people.
 
-1    NNP_t   Camelot
-1    NNP_t    England
+5    NNP_t   Camelot
+2    NNP_t    England
 1    NNP_t    _Holy _Grail
 1    _Holy   Holy
 1    _Grail  Grail
@@ -206,24 +206,24 @@
 1    NNPS_t    Saxons
 
 # Personal pronouns.
-1    PRP_t    I
-1    PRP_t    he
+5    PRP_t    I
+2    PRP_t    he
 1    PRP_t    her
 1    PRP_t    him
-1    PRP_t    it
+3    PRP_t    it
 1    PRP_t    one
 1    PRP_t    she
 1    PRP_t    them
 1    PRP_t    they
 
 # Possessive personal pronouns
-1    PRP$_t    her
-1    PRP$_t    his
+10    PRP$_t    her
+7    PRP$_t    his
 1    PRP$_t    its
 1    PRP$_t    their
 
 # Adverbs.
-1    RB_t    again
+2    RB_t    again
 1    RB_t    already
 1    RB_t    currently
 1    RB_t    frequently
@@ -233,7 +233,7 @@
 1    RB_t    unfortunately
 
 # 'do'/'does', ****
-1    VBP_t    do
+3    VBP_t    do
 1    VBZ_t    does
 
 # 'to'
@@ -243,24 +243,24 @@
 1    RB_t    not
 
 # Verbs (base form).
-1    VB_t    have
-1    VB_t    speak
-1    VB_t    cover
-1    VB_t    be
-1    VB_t    ride
-1    VB_t    drink
-1    VB_t    grow
-1    VB_t    carry
-1    VB_t    suggest
-1    VB_t    migrate
-1    VB_t    know
+30    VB_t    have
+10    VB_t    speak
+10    VB_t    cover
+50    VB_t    be
+10    VB_t    ride
+10    VB_t    drink
+10    VB_t    grow
+10    VB_t    carry
+10    VB_t    suggest
+10    VB_t    migrate
+20    VB_t    know
 
 # Verbs (past tense).
-1    VBD_t    had
+3    VBD_t    had
 1    VBD_t    spoke
 1    VBD_t    covered
-1    VBD_t    was
-1    VBD_t    were
+4    VBD_t    was
+3    VBD_t    were
 1    VBD_t    rode
 1    VBD_t    drank
 1    VBD_t    grew
@@ -273,7 +273,7 @@
 1    VBG_t    having
 1    VBG_t    speaking
 1    VBG_t    covering
-1    VBG_t    being
+2    VBG_t    being
 1    VBG_t    riding
 1    VBG_t    drinking
 1    VBG_t    growing
@@ -286,11 +286,11 @@
 1    VBN_t    had
 1    VBN_t    spoken
 1    VBN_t    covered
-1    VBN_t    been
+2    VBN_t    been
 1    VBN_t    ridden
 1    VBN_t    drunk
 1    VBN_t    grown
-1    VBN_t    carried
+2    VBN_t    carried
 1    VBN_t    suggested
 1    VBN_t    migrated
 1    VBN_t    known
@@ -304,22 +304,22 @@
 1    VBZ_t    knows
 
 # Verbs (present, plural, third person). ****or non-third person so, give VBP_t here
-1    VBP_t    have
+10    VBP_t    have
 1    VBP_t    speak
 1    VBP_t    cover
-1    VBP_t    are
+11    VBP_t    are
 1    VBP_t    ride
 1    VBP_t    drink
 1    VBP_t    grow
 1    VBP_t    carry
 1    VBP_t    suggest
 1    VBP_t    migrate
-1    VBP_t    know
+2    VBP_t    know
 
 # Wh-determiners.
-1    WDT_t    that
+2    WDT_t    that
 1    WDT_t    what
-1    WDT_t    which
+4    WDT_t    which
 
 # Wh-pronouns.
 1    WP_t    what
@@ -329,10 +329,10 @@
 1    WP$_t    whose
 
 # Wh-adverbs
-1    WRB_t    how
-1    WRB_t    when
-1    WRB_t    where
-1    WRB_t    why
+7    WRB_t    how
+13    WRB_t    when
+7    WRB_t    where
+4    WRB_t    why
 
 
 # Possessive marker.
@@ -342,11 +342,10 @@
 1    JJ_t    pull
 1    VB_t    pull
 1    JJ_t    other
-1    PRP_t    you
+5    PRP_t    you
 1    Misc_t    'm
 1    NN_t    dead
 1    JJ_t    dead
-1    PRP_t    you
 1    Misc_t    're
 1    VBG_t    fooling
 1    NN_t    anyone
@@ -354,33 +353,27 @@
 1    VBP_t    feel
 1    JJ_t    happy
 1    VBP_t    feel
-1    JJ_t    happy
 1    Misc_t    'm
 1    NN_t    thirty
 1    CD_t    seven
 1    Misc_t    'm
 1    JJ_t    old
-1    VB_t    old
 1    PRP_t    you
 1    Misc_t    're
 1    VBG_t    fooling
 1    PRP_t    yourself
 1    PRP_t    we
-1    VB_t    we
 1    Misc_t    're
 1    NN_t    living
 1    VBG_t    living
 1    IN_t    in
 1    NN_t    dictatorship
 1    PRP_t    we
-1    VB_t    we
 1    Misc_t    're
 1    DT_t    an
 1    NNP_t    anarcho-syndicalist
 1    NN_t    commune
 1    DT_t    all
-1    RB_t    all
-1    PDT_t    all
 1    NNS_t    decisions
 1    NN_t    officer
 1    VBN_t    ratified
@@ -401,7 +394,6 @@
 1    PRP$_t    your
 1    VBP_t    mean
 1    VB_t    mean
-1    NN_t    mean
 1    VBD_t    went
 1    IN_t    around
 1    VBG_t    sayin'
@@ -415,17 +407,12 @@
 1    VBN_t    lobbed
 1    NN_t    scimitar
 1    PRP_t    me
-1    NN_t    me
-1    VBP_t    me
 1    Misc_t    'd
 1    VBD_t    put
 1    PRP_t    me
-1    NN_t    me
-1    VBP_t    me
 1    RB_t    away
 1    RB_t    now
 1    PRP_t    we
-1    VB_t    we
 1    VBP_t    see
 1    VB_t    see
 1    NN_t    violence
@@ -433,11 +420,8 @@
 1    IN_t    in
 1    NN_t    system
 1    JJ_t    oh
-1    NN_t    oh
 1    VBP_t    come
 1    VB_t    come
-1    VBN_t    come
-1    NN_t    come
 1    VBP_t    see
 1    VB_t    see
 1    NN_t    violence
@@ -457,13 +441,10 @@
 1    IN_t    with
 1    NN_t    none
 1    VB_t    pass
-1    NN_t    pass
 1    VBP_t    move
 1    NN_t    man
 1    VBP_t    come
-1    VB_t    come
-1    VBN_t    come
-1    NN_t    come
+2    VB_t    come
 1    PRP_t    you
 1    VBP_t    pansy
 1    NN_t    victory
@@ -472,19 +453,14 @@
 1    VBG_t    going
 1    VB_t    bleed
 1    PRP_t    me
-1    NN_t    me
-1    VBP_t    me
 1    PRP_t    you
 1    Misc_t    're
 1    JJ_t    loony
 1    NN_t    loony
 1    DT_t    all
-1    RB_t    all
-1    PDT_t    all
 1    NN_t    right
 1    RB_t    right
 1    PRP_t    we
-1    VB_t    we
 1    Misc_t    'll
 1    NN_t    call
 1    VBP_t    call
@@ -496,48 +472,32 @@
 1    IN_t    off
 1    RP_t    off
 1    PRP_t    we
-1    VB_t    we
 1    VBN_t    found
-1    VBD_t    found
 1    NN_t    witch
 1    PRP_t    we
-1    VB_t    we
 1    VB_t    burn
 1    VBP_t    burn
 1    Misc_t    'm
 1    NN_t    witch
-1    RB_t    well
 1    JJ_t    second
 1    VBD_t    thought
 1    NN_t    thought
 1    VB_t    let
 1    VBP_t    go
 1    VB_t    go
-1    RB_t    go
-1    IN_t    go
-1    NN_t    go
 1    RB_t    silly
 1    NN_t    place
 1    VB_t    place
 1    NNP_t    King
-1    VBG_t    King
 1    PRP$_t    your
 1    NN_t    purpose
 1    NN_t    Quest
-1    NNP_t    Quest
 1    VBP_t    go
-1    VB_t    go
-1    RB_t    go
-1    IN_t    go
-1    NN_t    go
+2    VB_t    go
 1    VB_t    tell
 1    NN_t    tell
-1    VBP_t    tell
-1    RB_t    tell
-1    VBD_t    tell
 1    PRP$_t    your
 1    PRP_t    we
-1    VB_t    we
 1    VBN_t    charged
 1    NNP_t    God
 1    JJ_t    blow
@@ -549,8 +509,6 @@
 1    NNP_t    Arthur-king
 1    PRP_t    you
 1    DT_t    all
-1    RB_t    all
-1    PDT_t    all
 1    PRP$_t    your
 1    RB_t    silly
 1    NNP_t    English
@@ -561,11 +519,6 @@
 1    NN_t    strange
 1    NN_t    person
 1    RB_t    now
-1    VBP_t    go
-1    VB_t    go
-1    RB_t    go
-1    IN_t    go
-1    NN_t    go
 1    RB_t    away
 1    VB_t    taunt
 1    VBP_t    taunt
@@ -575,6 +528,5 @@
 1    NNP_t    ah
 1    PRP$_t    your
 1    NN_t    mother
-1    VBP_t    mother
 1    VBP_t    run
 1    RB_t    away
