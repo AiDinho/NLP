@@ -1,12 +1,15 @@
 import nltk
+from nltk.corpus import treebank
 
 fbank = open("./atis3.treebank","r")
-fs1 = open("./S1_grail.gr","w")
+fs1 = open("./S1.gr","w")
 
 print "...Generating..."
 
 rule_set = []
 productions = []
+
+trees = treebank.parsed_sents()
 
 for line in fbank:
     tree = nltk.Tree(line)
@@ -14,12 +17,24 @@ for line in fbank:
     productions = nltk.Tree.productions(tree)
     rule_set = rule_set + productions
 
-fd = nltk.FreqDist(rule for rule in rule_set)
-rule_set = set(rule_set)
-
+n_rule_set = []
+count = 0
 for rule in rule_set:
-     if str(rule).split()[-1][0] == "'":
-         continue
+    s_rule = str(rule)    
+    s_rule = s_rule.replace("->"," ")
+    row = s_rule.split()
+    tag = row[0]
+    if row[1][0] == "'" or row[1][0] == "\"":   # remove terminals
+        new_row = tag + " "+ tag + "_t"
+    else:
+        new_row = s_rule
+    n_rule_set.append(new_row)
+
+fd = nltk.FreqDist(rule for rule in n_rule_set)
+n_rule_set = list(set(n_rule_set))
+n_rule_set.sort()    # to make S1.gr looks nice
+
+for rule in n_rule_set:
      fs1.write(str(fd[rule])+" "+str(rule)+"\n")
      
 print "...Finish!"

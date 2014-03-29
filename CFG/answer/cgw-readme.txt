@@ -47,5 +47,35 @@ Step 3, generate the S1.gr
 Using nltk.Tree, we can transform the trees in atis3.treebank into eCNF.
 
 
+Step 4, tuning all by generating some sentences using S1.gr, Vocab.gr
+
+- I generate some sentences, and found there are some irreasonable ones. For example, "we" appears as a verb, so I look into the vocab.gr, it turns out when I modelled the ambiguity of the words and its pos-tags using nltk.treebank, I modelled this one, which is very unlikely, and the weights of it is unreasonably high. So I tuned again on the weights of the vocabularies. 
+
+- Now the -entropy is around -7.4.
+
+
+Step 5, how to make my grammar "competitive"
+
+- My grammar has a lot of "weakness" on itself, for example, it does not accept a comma.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

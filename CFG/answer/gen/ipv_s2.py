@@ -41,19 +41,19 @@ tagset = list(set(tagset))
 for i in range(len(tagset)):
     if tagset[i][0] == "_":
         continue
-    fs2.write(str(1)+"    S2    _"+tagset[i]+"\n")
+    fs2.write(str(1)+"    S2    "+tagset[i].rstrip("_t")+"\n")
 
 for i in range(len(tagset)):
     if tagset[i][0] == "_":
         continue
-    fs2.write(str(1)+"    _"+tagset[i]+"    "+tagset[i]+"\n")
+    fs2.write(str(1)+"    "+tagset[i].rstrip("_t")+"    "+tagset[i]+"\n")
     for j in range(len(tagset)):
         std_tag1 = tagset[i].rstrip("_t")  # used to lookup cfd        
         std_tag2 = tagset[j].rstrip("_t")
         if tagset[j][0] == "_":
             continue
         #fs2.write(str(1)+"    _"+tagset[i]+"    "+tagset[i]+"    _"+tagset[j]+"\n")            
-        fs2.write(str(1+cfd[std_tag1][std_tag2])+"    _"+tagset[i]+"    "+tagset[i]+"    _"+tagset[j]+"\n")
+        fs2.write(str(1+cfd[std_tag1][std_tag2])+"    "+std_tag1+"    "+tagset[i]+"    "+std_tag2+"\n")
 
 
 print "...Finish!"

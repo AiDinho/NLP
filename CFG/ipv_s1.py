@@ -1,4 +1,5 @@
 import nltk
+from nltk.corpus import treebank
 
 fbank = open("./atis3.treebank","r")
 fs1 = open("./S1.gr","w")
@@ -7,6 +8,8 @@ print "...Generating..."
 
 rule_set = []
 productions = []
+
+trees = treebank.parsed_sents()
 
 for line in fbank:
     tree = nltk.Tree(line)
