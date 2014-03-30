@@ -31,7 +31,8 @@ tag_set.sort()    # to make S1.gr looks nice
 for tag in tag_set:
     print tag
 
-
+fbank.close()
+fs1.close()
 
 
 

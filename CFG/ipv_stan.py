@@ -1,7 +1,7 @@
 import nltk
 
-fbank = open("./atis3.treebank","r")
-fs1 = open("./S1.gr","w")
+fbank = open("./stan2.bgr","r")
+fs1 = open("./Stan.bgr","w")
 
 print "...Generating..."
 

@@ -9,7 +9,7 @@
 4    S2    JJ
 2    S2    VBG
 1    S2    PDT
-2    S2    :
+2    S2    $:
 7    S2    NN
 3    S2    WRB
 2    S2    CC
@@ -25,12 +25,12 @@
 1    S2    WDT
 1    S2    WP$
 1    S2    TO
-1    S2    ,
+1    S2    $,
 1    S2    VBN
 9    S2    NNP
 15    S2    DT
 6    S2    RB
-1    S2    .
+1    S2    $.
 1    S2    VBP
 1    VBZ    VBZ_t
 2    VBZ    VBZ_t    VBZ

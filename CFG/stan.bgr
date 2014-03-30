@@ -1,0 +1,15 @@
+1 . ._t
+2 CC CC_t
+2 DT DT_t
+1 IN IN_t
+2 NN NN_t
+1 NNS NNS_t
+1 NP   CC NP|<NP-CC-NP>
+1 NP|<CC-NP>   CC NP
+1 NP|<NP-CC-NP>   NP NP|<CC-NP>
+1 PP   IN NP
+1 ROOT   S
+1 S   NP S|<VP-.>
+1 S|<VP-.>   VP .
+1 VBP VBP_t
+1 VP   VBP PP
