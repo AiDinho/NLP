@@ -34,7 +34,7 @@ def grade_align(reference, system, output):
     f_data = "%s.%s" % (align_opts.train, align_opts.french)
     e_data = "%s.%s" % (align_opts.train, align_opts.english)
     (size_a, size_s, size_a_and_s, size_a_and_p) = (0.0,0.0,0.0,0.0)
-    for (i, (f, e, g, a)) in enumerate(zip(open(f_data), open(e_data), reference, system)):
+    for (n, (f, e, g, a)) in enumerate(zip(open(f_data), open(e_data), reference, system)):
       fwords = f.strip().split()
       ewords = e.strip().split()
 
@@ -62,8 +62,8 @@ def grade_align(reference, system, output):
       size_s += len(sure)
       size_a_and_s += len(alignment & sure)
       size_a_and_p += len(alignment & possible) + len(alignment & sure)
-      if (i<align_opts.n):
-        output.write("  Alignment %i  KEY: ( ) = guessed, * = sure, ? = possible\n" % i)
+      if (n<align_opts.n):
+        output.write("  Alignment %i  KEY: ( ) = guessed, * = sure, ? = possible\n" % n)
         output.write("  ")
         for j in ewords:
           output.write("---")

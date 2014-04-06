@@ -9,6 +9,8 @@
 1 <SENT-,> SENT $.
 1 TRAP $: <SENT-:>
 1 <SENT-:> SENT $.
+1 TRAP Misc_t <SENT-M>
+1 <SENT-M> SENT $.
 
 1 SENT   ADJP
 228 SENT   FRAG
@@ -192,6 +194,7 @@
 17 NP   NP SBAR
 10 NP   NP VP
 156 NP   PRP
+15 NP   PRP Misc_t
 2 NP   QP NN
 7 NP   QP NNS
 1 NP   QP NP|<NNS-QP>

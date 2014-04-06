@@ -1,13 +1,3 @@
-"""
-Here each group tests single python program which must be named with the group name plus a .py suffix. These programs are executed with the same python interpreter used to run the check program.
-
-Extra options needed to run check-hw5.py:
-
-	-p DIR/PREFIX   prefix for parallel data, e.g. ../hansards when running from answer directory
-	-n NUMBER       number of alignments to print, set to 0 to print only accuracy output, set to 1 to debug alignments
-
-"""
-
 import check
 import os
 import difflib

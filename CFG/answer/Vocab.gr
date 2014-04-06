@@ -395,7 +395,6 @@
 1    PRP_t    me
 1    Misc_t    'd
 1    VBD_t    put
-1    RB_t    away
 1    RB_t    now
 1    VBP_t    see
 1    VB_t    see
@@ -441,7 +440,6 @@
 1    NN_t    witch
 1    VB_t    burn
 1    VBP_t    burn
-1    JJ_t    second
 1    VBD_t    thought
 1    NN_t    thought
 1    VB_t    let
@@ -467,7 +465,6 @@
 #pay attention to this one
 1    NNP_t    thppppt
 1    NN_t    person
-1    RB_t    now
 1    RB_t    away
 1    VB_t    taunt
 1    VBP_t    taunt
@@ -495,15 +492,10 @@
 1    NNP_t    English
 1    JJ_t    English
 1    JJ_t    strange
-1    NN_t    person
-1    RB_t    now
-1    RB_t    away
 1    VB_t    taunt
 1    VBP_t    taunt
 1    PRP_t    you
-1    JJ_t    second
 1    NNP_t    ah
 1    PRP$_t    your
 1    NN_t    mother
 1    VBP_t    run
-1    RB_t    away
