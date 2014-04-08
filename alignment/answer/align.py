@@ -31,11 +31,14 @@ sys.stderr.write("Training with IBM Model 1...")
 bitext = [[sentence.strip().split() for sentence in pair] for pair in zip(open(f_data), open(e_data))[:opts.num_sents]]
 
 t_ef = defaultdict(float)
-c_ef = defaultdict(int)
-total_f = defaultdict(int)
-tol = pow(10,-4)  # the convergence tolerance
+tol = 1e-2  # the convergence tolerance
 de = defaultdict(int)   # store the counts of words        
 df = defaultdict(int)   # in a hash table staying efficient
+english_words = set()
+foreign_words = set()
+for (f_sent, e_sent) in bitext:
+    english_words.update(e_sent)
+    foreign_words.update(f_sent)
 num = 0
 # permutate all the combinations of f -> e
 for (f_sent, e_sent) in bitext:
@@ -44,26 +47,19 @@ for (f_sent, e_sent) in bitext:
     for f_word in f_sent:
         df[num,f_word] += 1
     num+=1
+    # initialize the t_ef, uniformly by default
     for f_i in set(f_sent):
         for e_j in set(e_sent):
-            t_ef[e_j, f_i] = 1
+            t_ef[e_j, f_i] = 1/len(english_words)
 
 pairs = t_ef.keys()
-l = len(pairs)
-# initialize the t_ef, uniformly by default
-for (e, f) in t_ef.keys():
-    t_ef[e, f] = 1/l
-
-curr_L = 0
-prev_L = tol + 1
-
-for i in range(5):
-    prev_L = curr_L
-    curr_L = 0
+num_probs = len(pairs)
+num_converged = 0
+while num_converged < num_probs:
     num = 0    
-    for (e, f) in pairs:
-        c_ef[e,f] = 0 
-        total_f[f] = 0
+    num_converged = 0
+    c_ef = defaultdict(int)
+    total_f = defaultdict(int)
     for (f_sent, e_sent) in bitext:
         e_words = set(e_sent)     
         f_words = set(f_sent)
@@ -79,12 +75,12 @@ for i in range(5):
                 total_f[f_word] += rhs
         num+=1
     for (e, f) in pairs:
-        t_ef[e,f] = c_ef[e,f]/total_f[f]
-        curr_L += math.log(t_ef[e,f],2)
-    print curr_L
+        new_prob = c_ef[e,f]/total_f[f]
+        delta = abs(t_ef[e,f] - new_prob)
+        if delta < tol:
+            num_converged += 1
+        t_ef[e,f] = new_prob
 
-
-'''
 for (f_sent, e_sent) in bitext:
     for (i, f) in enumerate(f_sent):
         a_max = 0
@@ -95,4 +91,3 @@ for (f_sent, e_sent) in bitext:
         sys.stdout.write("%i-%i " % (i,j_max))
     sys.stdout.write("\n")  
                 
-'''
