@@ -30,8 +30,8 @@ if not ( os.path.isfile(f_data) and os.path.isfile(e_data) ):
 sys.stderr.write("Training with IBM Model 1...")
 bitext = [[sentence.strip().split() for sentence in pair] for pair in zip(open(f_data), open(e_data))[:opts.num_sents]]
 
-t_ef = defaultdict(float)
-tol = 1e-2  # the convergence tolerance
+tol = 1e-1  # the convergence tolerance, hand-tuned
+cutoff = 50 # the converged count cut-off, hand-tuned
 de = defaultdict(int)   # store the counts of words        
 df = defaultdict(int)   # in a hash table staying efficient
 english_words = set()
@@ -40,7 +40,10 @@ for (f_sent, e_sent) in bitext:
     english_words.update(e_sent)
     foreign_words.update(f_sent)
 num = 0
-# permutate all the combinations of f -> e
+
+# use lambda to initialize the probability on the fly
+t_ef = defaultdict(lambda: float(1)/len(english_words)) 
+# precompute the training data for efficiency
 for (f_sent, e_sent) in bitext:
     for e_word in e_sent:
         de[num,e_word] += 1
@@ -55,7 +58,8 @@ for (f_sent, e_sent) in bitext:
 pairs = t_ef.keys()
 num_probs = len(pairs)
 num_converged = 0
-while num_converged < num_probs:
+
+while num_probs - num_converged > cutoff:
     num = 0    
     num_converged = 0
     c_ef = defaultdict(int)
@@ -81,11 +85,14 @@ while num_converged < num_probs:
             num_converged += 1
         t_ef[e,f] = new_prob
 
+# argmax part
+penalty = 0.89
 for (f_sent, e_sent) in bitext:
     for (i, f) in enumerate(f_sent):
         a_max = 0
         for (j, e) in enumerate(e_sent):
-            if t_ef[(e,f)] > a_max:
+            # add penalty to let the alighnment closer to the diagnal
+            if t_ef[(e,f)]*pow(penalty, abs(i - j)) > a_max:
                 a_max = t_ef[e,f]
                 j_max = j
         sys.stdout.write("%i-%i " % (i,j_max))
